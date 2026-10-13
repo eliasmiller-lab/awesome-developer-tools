@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome Developer Tools - Free Online Developer Utilities Directory</title>
+  <meta name="description" content="A curated directory of free, privacy-first developer utilities by CodeKivo. JSON formatters, JWT decoders, Base64 tools, UUID generators, SQL builders, and CSS helpers.">
+  <link rel="canonical" href="https://codekivo.com">
+  <meta property="og:title" content="Awesome Developer Tools - Curated Directory">
+  <meta property="og:description" content="30+ free, fast, in-browser developer utilities. 100% private and client-side.">
+  <meta property="og:url" content="https://codekivo.com">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-hover-bg: #1f2937;
+      --card-border: #1e293b;
+      --card-border-hover: #6366f1;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent: #818cf8;
+      --accent-gradient: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+      --badge-bg: #312e81;
+      --badge-text: #c7d2fe;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem 4rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2.5rem;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 3rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 2.85rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.lead {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 2rem;
+    }
+    .header-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      color: #ffffff;
+      font-weight: 700;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+    }
+    .btn-main:hover {
+      background: linear-gradient(135deg, #4f46e5, #4338ca);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px 0 rgba(99, 102, 241, 0.45);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      background: #1f2937;
+      color: #e5e7eb;
+      font-weight: 600;
+      border-radius: 9999px;
+      text-decoration: none;
+      border: 1px solid #374151;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: #374151;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .quick-stats span strong {
+      color: #fff;
+    }
+    .category-section {
+      margin-bottom: 3rem;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #ffffff;
+    }
+    .section-link {
+      color: var(--accent);
+      font-size: 0.875rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .section-link:hover {
+      text-decoration: underline;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      background: var(--card-hover-bg);
+      border-color: var(--card-border-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+      line-height: 1.5;
+    }
+    .card a.tool-btn {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: gap 0.2s ease;
+    }
+    .card a.tool-btn:hover {
+      gap: 0.5rem;
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--card-border);
+      margin-top: 4rem;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .footer-links {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">Open Source Developer Directory</span>
+      <h1>Awesome Developer Tools</h1>
+      <p class="lead">A curated, privacy-first directory of 30+ browser-native engineering utilities. Zero server uploads, lightning fast, free forever.</p>
+      <div class="header-actions">
+        <a href="https://codekivo.com" class="btn-main" target="_blank" rel="noopener">Explore on CodeKivo &rarr;</a>
+        <a href="https://github.com" class="btn-secondary" target="_blank" rel="noopener">Star on GitHub ⭐</a>
+      </div>
+      <div class="quick-stats">
+        <span>📦 <strong>30</strong> Utilities</span>
+        <span>🛡️ <strong>100%</strong> In-Browser Execution</span>
+        <span>⚡ <strong>0ms</strong> Upload Latency</span>
+      </div>
+    </header>
+
+    <!-- JSON & Data -->
+    <section class="category-section">
+      <div class="section-header">
+        <h2 class="section-title">🗂️ JSON & Data</h2>
+        <a href="https://codekivo.com/json-and-data/" class="section-link" target="_blank" rel="noopener">Browse Hub &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>JSON Formatter & Validator</h3>
+          <p>Format, validate, beautify & minify JSON</p>
+          <a href="https://codekivo.com/json-and-data/json-formatter-and-validator/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>JSON to CSV Converter</h3>
+          <p>Convert JSON to CSV and CSV to JSON</p>
+          <a href="https://codekivo.com/json-and-data/json-to-csv-converter/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>JSON to TypeScript Converter</h3>
+          <p>Generate TypeScript interfaces from JSON</p>
+          <a href="https://codekivo.com/json-and-data/json-to-typescript-converter/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Encoding & Number Base -->
+    <section class="category-section">
+      <div class="section-header">
+        <h2 class="section-title">🔄 Encoding & Number Base</h2>
+        <a href="https://codekivo.com/encoding-and-conversion/" class="section-link" target="_blank" rel="noopener">Browse Hub &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Base64 Encoder & Decoder</h3>
+          <p>Encode & decode Base64 strings, files & images</p>
+          <a href="https://codekivo.com/encoding-and-conversion/base64-encoder-and-decoder/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>URL Encoder & Decoder</h3>
+          <p>Encode & decode URL percent-encoded characters</p>
+          <a href="https://codekivo.com/url-and-web/url-encoder-and-decoder/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Hex Converter</h3>
+          <p>Convert text, hex, binary & decimal values</p>
+          <a href="https://codekivo.com/encoding-and-conversion/hex-converter/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Number Base Converter</h3>
+          <p>Convert numbers between binary, octal, decimal, hex</p>
+          <a href="https://codekivo.com/encoding-and-conversion/number-base-converter/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HTTP & API -->
+    <section class="category-section">
+      <div class="section-header">
+        <h2 class="section-title">🌐 HTTP & API</h2>
+        <a href="https://codekivo.com/api-and-web-development/" class="section-link" target="_blank" rel="noopener">Browse Hub &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>JWT Decoder</h3>
+          <p>Decode, inspect & verify JSON Web Tokens</p>
+          <a href="https://codekivo.com/api-and-web-development/jwt-decoder/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>cURL Converter</h3>
+          <p>Convert cURL commands to JavaScript, Python, Go</p>
+          <a href="https://codekivo.com/url-and-web/curl-converter/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>HTTP Status Codes</h3>
+          <p>Browse & search HTTP response status codes</p>
+          <a href="https://codekivo.com/api-and-web-development/http-status-codes/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>URL Parser & Builder</h3>
+          <p>Parse URL components & query parameters</p>
+          <a href="https://codekivo.com/url-and-web/url-parser-and-builder/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- System & Security -->
+    <section class="category-section">
+      <div class="section-header">
+        <h2 class="section-title">🛡️ System & Security</h2>
+        <a href="https://codekivo.com/developer-utility/" class="section-link" target="_blank" rel="noopener">Browse Hub &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>UUID Generator</h3>
+          <p>Bulk generate UUID v1, v4, v7 & validate UUIDs</p>
+          <a href="https://codekivo.com/developer-utility/uuid-generator/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Hash Generator</h3>
+          <p>MD5, SHA-1, SHA-256, SHA-384 & SHA-512 online</p>
+          <a href="https://codekivo.com/developer-utility/hash-generator/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Unix Timestamp Converter</h3>
+          <p>Epoch to date & date to epoch converter</p>
+          <a href="https://codekivo.com/developer-utility/unix-timestamp-converter/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Cron Expression Generator & Explainer</h3>
+          <p>Generate, parse, validate & explain cron schedule expressions</p>
+          <a href="https://codekivo.com/developer-utility/cron-expression-generator/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Code Formatter</h3>
+          <p>Multi-language code formatter & beautifier</p>
+          <a href="https://codekivo.com/code-formatting-and-minification/code-formatter/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web & CSS -->
+    <section class="category-section">
+      <div class="section-header">
+        <h2 class="section-title">🎨 Web & CSS</h2>
+        <a href="https://codekivo.com/html-and-css/" class="section-link" target="_blank" rel="noopener">Browse Hub &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>CSS Generator</h3>
+          <p>Generate box shadows, gradients, border radius & flexbox</p>
+          <a href="https://codekivo.com/html-and-css/css-generator/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Color Converter</h3>
+          <p>Convert HEX, RGB, HSL, CMYK & check WCAG contrast</p>
+          <a href="https://codekivo.com/html-and-css/color-converter/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>HTML Formatter & Minifier</h3>
+          <p>Format, beautify and compress HTML markup</p>
+          <a href="https://codekivo.com/html-and-css/html-formatter-and-minifier/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>CSS Formatter & Minifier</h3>
+          <p>Format, beautify and compress CSS stylesheets</p>
+          <a href="https://codekivo.com/html-and-css/css-formatter-and-minifier/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>JavaScript Minifier</h3>
+          <p>Minify & compress JavaScript code</p>
+          <a href="https://codekivo.com/code-formatting-and-minification/javascript-minifier/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Text & Typography -->
+    <section class="category-section">
+      <div class="section-header">
+        <h2 class="section-title">📝 Text & Typography</h2>
+        <a href="https://codekivo.com/text-and-string/" class="section-link" target="_blank" rel="noopener">Browse Hub &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Case Converter</h3>
+          <p>Convert between camelCase, snake_case & more</p>
+          <a href="https://codekivo.com/text-and-string/case-converter/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Text Compare</h3>
+          <p>Diff & compare differences between two texts</p>
+          <a href="https://codekivo.com/text-and-string/text-compare/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Text Analyzer</h3>
+          <p>Word count, character count & keyword density</p>
+          <a href="https://codekivo.com/text-and-string/text-analyzer/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Markdown to HTML</h3>
+          <p>Convert Markdown to rendered HTML</p>
+          <a href="https://codekivo.com/code-formatting-and-minification/markdown-to-html/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Regular Expressions -->
+    <section class="category-section">
+      <div class="section-header">
+        <h2 class="section-title">🎯 Regular Expressions</h2>
+        <a href="https://codekivo.com/regex-tools/" class="section-link" target="_blank" rel="noopener">Browse Hub &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Regex Tester</h3>
+          <p>Test regular expressions with real-time match highlighting</p>
+          <a href="https://codekivo.com/regex-tools/regex-tester/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Regex Explainer</h3>
+          <p>Break down & explain regex patterns in plain English</p>
+          <a href="https://codekivo.com/regex-tools/regex-explainer/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>Regex Builder</h3>
+          <p>Visually compose regular expression patterns</p>
+          <a href="https://codekivo.com/regex-tools/regex-builder/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Database & SQL -->
+    <section class="category-section">
+      <div class="section-header">
+        <h2 class="section-title">💾 Database & SQL</h2>
+        <a href="https://codekivo.com/sql-and-database/" class="section-link" target="_blank" rel="noopener">Browse Hub &rarr;</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>SQL Formatter & Minifier</h3>
+          <p>Format, beautify & compress SQL queries</p>
+          <a href="https://codekivo.com/sql-and-database/sql-formatter-and-minifier/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>SQL Query Builder</h3>
+          <p>Visually build SELECT, INSERT, UPDATE, DELETE queries</p>
+          <a href="https://codekivo.com/sql-and-database/sql-query-builder/" class="tool-btn" target="_blank" rel="noopener">Launch Tool &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-links">
+        <a href="https://codekivo.com" target="_blank" rel="noopener">CodeKivo Hub</a>
+        <a href="https://codekivo.com/zh/" target="_blank" rel="noopener">简体中文</a>
+        <a href="https://codekivo.com/es/" target="_blank" rel="noopener">Español</a>
+      </div>
+      <p>Curated and maintained with ❤️ for developers worldwide &bull; Distributed under the MIT License.</p>
+    </footer>
+  </div>
+</body>
+</html>
