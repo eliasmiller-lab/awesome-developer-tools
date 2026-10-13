@@ -142,8 +142,8 @@ CodeKivo provides localized interfaces and native workflows across multiple lang
 | Language | Regional Code | Official Hub URL |
 | :--- | :---: | :--- |
 | **English** | `EN` | [https://codekivo.com/](https://codekivo.com/) |
-| **简体中文** | `ZH` | [https://codekivo.com/zh/](https://codekivo.com/zh/) |
 | **Español** | `ES` | [https://codekivo.com/es/](https://codekivo.com/es/) |
+| **简体中文** | `ZH` | [https://codekivo.com/zh/](https://codekivo.com/zh/) |
 
 ---
 
